@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminDashboardController;
+use App\Http\Controllers\ChatController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ItemGroupController;
 use App\Http\Controllers\MenuController;
@@ -141,6 +142,14 @@ Route::group(['middleware' => 'admin'], function () {
         Route::post('/submit', [SlideShowController::class, 'submit']);
         Route::post('/delete', [SlideShowController::class, 'delete']);
         Route::post('UploadImage', [SlideShowController::class, 'UploadImage']);
+        // Route::get('export', [SlideShowController::class, 'exportExcell'])->name('slide_show.export');
+
+    });
+
+    Route::group(['prefix' => 'chat'], function () {
+        Route::resource('/', ChatController::class);
+        // Route::get('/getmodal', [ChatController::class, 'modal']);
+ 
         // Route::get('export', [SlideShowController::class, 'exportExcell'])->name('slide_show.export');
 
     });
