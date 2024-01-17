@@ -34,6 +34,7 @@
 <!--end::Body-->
 @include('admin.footer')
 <script>
+    // window.location.href = "https://t.me/computer_debug_bot";
     $.ajaxSetup({
     headers: {
         'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')

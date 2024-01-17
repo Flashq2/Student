@@ -8,6 +8,7 @@ use App\MainSystem\system;
 use Illuminate\Http\Request;
 use App\Models\MenuGroupModel;
 use Illuminate\Support\Facades\DB;
+use Pusher\Pusher;
 
 class MenuGroupController extends Controller
 {
@@ -15,11 +16,20 @@ class MenuGroupController extends Controller
     public $page;
     public $system ;
     public $prefix;
+    public $pusher;
+    public $options;
     function __construct(){
-        $this->page_id = "10003";
+        $this->page_id = "1007";
         $this->page = "Menu Group";
         $this->system = new system();
         $this->prefix = "menu_group";
+        $this->options = array('cluster' => 'ap1','encrypted' => true);
+        $this->pusher = new Pusher(
+            env('PUSHER_APP_KEY'),
+            env('PUSHER_APP_SECRET'),
+            env('PUSHER_APP_ID'),
+            $this->options
+        );
     }
     public function index(){
         try{
@@ -36,6 +46,7 @@ class MenuGroupController extends Controller
         
     }
     public function modal(Request $request){
+        $this->pusher->trigger('triger_message', 'triger', array('message' => 'hello world'));
         $data = $request->all();
         $record = null;
         if(isset($data['code'])){

@@ -18,7 +18,7 @@ class MenuController extends Controller
     public $system ;
     public $prefix;
     function __construct(){
-        $this->page_id = "10002";
+        $this->page_id = "1006";
         $this->page = "Menu";
         $this->system = new system();
         $this->prefix = "menu";
@@ -30,6 +30,7 @@ class MenuController extends Controller
             $page = $this->page;
             $page_id = $this->page_id;
             $prefix = $this->prefix;
+            // dd($col_record);
             return view('admin.menu.menu_list',compact('col_record','record','page','page_id','prefix'));
         }catch (Exception $ex){
             $this->system->telegram($ex->getMessage(),$this->page,$ex->getLine());

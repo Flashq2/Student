@@ -19,9 +19,21 @@
 <script src="{{ asset('/js/admin/custome.js') }}"></script>
 <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
 <script>
+    const pusher_key = $(document).find('meta[name="push_key"]').attr('content');
+        console.log(pusher_key);
+    var pusher = new Pusher(pusher_key, {
+        cluster: "ap1",
+        });
+    var channel = pusher.subscribe("triger_message");
     var notyf = new Notyf({
         duration: 3000,
     });
+
+    channel.bind("triger", (data) => {
+    // Method to be dispatched on trigger.
+    console.log(data);
+    });
+
     $(document).ready(function() {
         $('.global_laoder').hide();
 
@@ -189,10 +201,5 @@
             }
         });
       });
-   
-
-
-
-
     });
 </script>
