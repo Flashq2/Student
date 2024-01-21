@@ -30,7 +30,6 @@ class MenuController extends Controller
             $page = $this->page;
             $page_id = $this->page_id;
             $prefix = $this->prefix;
-            // dd($col_record);
             return view('admin.menu.menu_list',compact('col_record','record','page','page_id','prefix'));
         }catch (Exception $ex){
             $this->system->telegram($ex->getMessage(),$this->page,$ex->getLine());

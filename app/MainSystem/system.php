@@ -10,7 +10,7 @@ class system{
     public function telegram($exception,$page,$line) {
         $text = " ";
         $bot_api = "https://api.telegram.org";
-        $telegram_id = "-4017583488";
+        $telegram_id = "-1001998481641";
         $telegram_token = "6881991913:AAGXE0Ij82fwhvThLDeU0ouqJ9mq4uNNsT8";
 
         $apiUri = sprintf('%s/bot%s/%s', $bot_api, $telegram_token, 'sendMessage');

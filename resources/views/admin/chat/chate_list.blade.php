@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dreams Chat - Html Template</title>
+    <title>Setec Message</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css">
     <script src="https://kit.fontawesome.com/bca9825c0c.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="{{ asset('/css/admin/chart_css.css') }}">
@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="{{ asset('/css/admin/chart_css4.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/admin/chart_css5.css') }}">
 </head>
+<style>
+    .header-top {
+        background: #ffff;
+    }
+</style>
 
 <body>
 
@@ -31,8 +36,9 @@
                     <div class="header">
                         <div class="header-top">
                             <div class="logo ms-2 mt-3">
-                                <a href="{{url('/chat')}}">
-                                    <img src="https://www.setecu.com/images/sampledata/icetheme/logo.png" class="header_image img-fluid" alt="">
+                                <a href="{{ url('/chat') }}">
+                                    <img src="https://www.setecu.com/images/sampledata/icetheme/logo.png"
+                                        class="header_image img-fluid" alt="">
                                 </a>
                             </div>
                         </div>
@@ -56,14 +62,15 @@
                         </button>
                     </div>
                     <div class="search_chat has-search">
-                        <span class="fas fa-search form-control-feedback"></span>
-                        <input class="form-control chat_input" id="search-contact" type="text" placeholder="">
+                        {{-- <span class="fas fa-search form-control-feedback"></span> --}}
+                        <input class="form-control chat_input" id="search-contact" type="text"
+                            placeholder="Search ...">
                     </div>
                     <div class="sidebar-body" id="chatsidebar">
                         <ul class="user-list">
                             <li class="user-list-item">
                                 <div class="avatar avatar-online">
-                                    <img src="https://www.setecu.com/images/sampledata/icetheme/logo.png" class="rounded-circle" alt="image">
+                                    <img src="{{ asset('/image/no_image.jpg') }}" class="rounded-circle" alt="image">
                                 </div>
                                 <div class="users-list-body">
                                     <div>
@@ -93,7 +100,8 @@
                             <li class="user-list-item">
                                 <div>
                                     <div class="avatar avatar-away">
-                                        {{-- <img src="assets/img/avatar-7.jpg" class="rounded-circle" alt="image"> --}}
+                                        <img src="{{ asset('/image/no_image.jpg') }}" class="rounded-circle"
+                                            alt="image">
                                     </div>
                                 </div>
                                 <div class="users-list-body">
@@ -142,7 +150,7 @@
                             </ul>
                         </div>
                         <figure class="avatar ms-1">
-                            {{-- <img src="assets/img/avatar-2.jpg" class="rounded-circle" alt="image"> --}}
+                            <img src="{{ asset('/image/no_image.jpg') }}" class="rounded-circle" alt="image">
                         </figure>
                         <div class="mt-1">
                             <h5 class="mb-1">Scott Albright</h5>
@@ -183,7 +191,8 @@
                     <div class="messages">
                         <div class="chats">
                             <div class="chat-avatar">
-                                {{-- <img src="assets/img/avatar-2.jpg" class="rounded-circle dreams_chat" alt="image"> --}}
+                                <img src="{{ asset('/image/no_image.jpg') }}" class="rounded-circle dreams_chat"
+                                    alt="image">
                             </div>
                             <div class="chat-content">
                                 <div class="message-content">
@@ -212,14 +221,20 @@
                                 </div>
                                 <div class="chat-time">
                                     <div>
-                                        {{-- <div class="time">Yesterday 14:38 PM <i><img src="assets/img/double-tick.png" alt=""></i></div> --}}
+                                        <div class="time">Yesterday 14:38 PM <i><img
+                                                    src="{{ asset('/image/no_image.jpg') }}" class="rounded-circle"
+                                                    alt="image">
+                                            </i></div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="chats">
                             <div class="chat-avatar">
-                                {{-- <img src="assets/img/avatar-2.jpg" class="rounded-circle dreams_chat" alt="image"> --}}
+                                <img src="{{ asset('/image/no_image.jpg') }}" class="rounded-circle dreams_chat"
+                                    alt="image">
+
+
                             </div>
                             <div class="chat-content">
                                 <div class="message-content">
@@ -240,7 +255,10 @@
                                 </div>
                                 <div class="chat-time">
                                     <div>
-                                        {{-- <div class="time">Yesterday 14:42 PM <i><img src="assets/img/double-tick.png" alt=""></i></div> --}}
+                                        <div class="time">Yesterday 14:42 PM <i> <img
+                                                    src="{{ asset('/image/no_image.jpg') }}" class="rounded-circle"
+                                                    alt="image">
+                                            </i></div>
                                     </div>
                                 </div>
                             </div>
@@ -251,7 +269,9 @@
 
                         <div class="chats">
                             <div class="chat-avatar">
-                                {{-- <img src="assets/img/avatar-2.jpg" class="rounded-circle dreams_chat" alt="image"> --}}
+
+                                <img src="{{ asset('/image/no_image.jpg') }}" class="rounded-circle dreams_chat"
+                                    alt="image">
                             </div>
                             <div class="chat-content">
                                 <div class="message-content">
@@ -260,79 +280,6 @@
                                 <div class="chat-time">
                                     <div>
                                         <div class="time">14:26 PM</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="chats chats-right">
-
-                            <div class="chat-content">
-                                <div class="message-content">
-                                    Oh Cool, Yeah i am working here famous software company
-                                </div>
-                                <div class="chat-time">
-                                    <div>
-                                        {{-- <div class="time">14:29 PM <i><img src="assets/img/double-tick.png" alt=""></i></div> --}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="chats">
-                            <div class="chat-avatar">
-                                {{-- <img src="assets/img/avatar-2.jpg" class="rounded-circle dreams_chat" alt="image"> --}}
-                            </div>
-                            <div class="chat-content">
-                                <div class="message-content">
-                                    That's Good Lol, What is your designation?
-                                </div>
-                                <div class="chat-time">
-                                    <div>
-                                        <div class="time">14:30 PM</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="chats chats-right">
-
-                            <div class="chat-content">
-                                <div class="message-content">
-                                    I am senior software engineer.
-                                </div>
-                                <div class="chat-time">
-                                    <div>
-                                        {{-- <div class="time">14:32 PM <i><img src="assets/img/double-tick.png" alt=""></i></div> --}}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="chat-line">
-                            <span class="chat-date">1 message unread</span>
-                        </div>
-
-                        <div class="chats">
-                            <div class="chat-avatar">
-                                {{-- <img src="assets/img/avatar-2.jpg" class="rounded-circle dreams_chat" alt="image"> --}}
-                            </div>
-                            <div class="chat-content">
-                                <div class="message-content">
-                                    Good.!!!
-                                </div>
-                                <div class="chat-time">
-                                    <div>
-                                        <div class="time">14:33 PM</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="chats chats-right">
-
-                            <div class="chat-content">
-                                <div class="message-content">
-                                    Yeah, Thank you..
-                                </div>
-                                <div class="chat-time">
-                                    <div>
-                                        {{-- <div class="time">14:34 PM <i><img src="assets/img/double-tick.png" alt=""></i></div> --}}
                                     </div>
                                 </div>
                             </div>
@@ -395,7 +342,8 @@
                                 <div class="call-wrapper">
                                     <div class="call-inner">
                                         <div class="call-user">
-                                            {{-- <img alt="User Image" src="assets/img/avatar-2.jpg" class="call-avatar"> --}}
+                                            <img alt="User Image" src="{{ asset('/image/no_image.jpg') }}"
+                                                class="call-avatar">
                                             <h4>Tobbias Williams</h4>
                                             <span class="chat_cal">calling...</span>
                                         </div>
@@ -426,7 +374,8 @@
                                 <div class="call-wrapper">
                                     <div class="call-inner">
                                         <div class="call-user">
-                                            {{-- <img alt="User Image" src="assets/img/avatar-2.jpg" class="call-avatar"> --}}
+                                            <img alt="User Image" src="{{ asset('/image/no_image.jpg') }}"
+                                                class="call-avatar">
                                             <h4>Tobbias Williams</h4>
                                             <span class="chat_cal">calling...</span>
                                         </div>
@@ -566,7 +515,9 @@
                                             <div class="card-body">
                                                 <div class="media d-flex">
                                                     <div class="avatar avatar-online me-5 flex-shrink-0">
-                                                        {{-- <img class="avatar-img group_image" src="assets/img/avatar-7.jpg" alt="Anna Bridges"> --}}
+                                                        <img class="avatar-img group_image"
+                                                            src="{{ asset('/image/no_image.jpg') }}"
+                                                            alt="Anna Bridges">
                                                     </div>
                                                     <div
                                                         class="media-body align-self-center me-6 group_card_media flex-grow-1">
@@ -594,7 +545,9 @@
                                             <div class="card-body">
                                                 <div class="media d-flex">
                                                     <div class="avatar me-5 flex-shrink-0">
-                                                        {{-- <img class="avatar-img group_image" src="assets/img/avatar-1.jpg" alt="Brian Dawson"> --}}
+                                                        <img class="avatar-img group_image"
+                                                            src="{{ asset('/image/no_image.jpg') }}"
+                                                            alt="Brian Dawson">
                                                     </div>
                                                     <div
                                                         class="media-body align-self-center me-6 group_card_media flex-grow-1">
@@ -622,7 +575,9 @@
                                             <div class="card-body">
                                                 <div class="media d-flex">
                                                     <div class="avatar me-5 flex-shrink-0">
-                                                        {{-- <img class="avatar-img group_image" src="assets/img/avatar-2.jpg" alt="Leslie Sutton"> --}}
+                                                        <img class="avatar-img group_image"
+                                                            src="{{ asset('/image/no_image.jpg') }}"
+                                                            alt="Leslie Sutton">
                                                     </div>
                                                     <div
                                                         class="media-body align-self-center me-6 group_card_media flex-grow-1">
@@ -650,7 +605,9 @@
                                             <div class="card-body">
                                                 <div class="media d-flex">
                                                     <div class="avatar me-5 flex-shrink-0">
-                                                        {{-- <img class="avatar-img group_image" src="assets/img/avatar-3.jpg" alt="Matthew Wiggins"> --}}
+                                                        <img class="avatar-img group_image"
+                                                            src="{{ asset('/image/no_image.jpg') }}"
+                                                            alt="Matthew Wiggins">
                                                     </div>
                                                     <div
                                                         class="media-body align-self-center me-6 group_card_media flex-grow-1">
@@ -678,7 +635,9 @@
                                             <div class="card-body">
                                                 <div class="media d-flex">
                                                     <div class="avatar me-5 flex-shrink-0">
-                                                        {{-- <img class="avatar-img group_image" src="assets/img/avatar-4.jpg" alt="Simon Hensley"> --}}
+                                                        <img class="avatar-img group_image"
+                                                            src="{{ asset('/image/no_image.jpg') }}"
+                                                            alt="Simon Hensley">
                                                     </div>
                                                     <div
                                                         class="media-body align-self-center me-6 group_card_media flex-grow-1">
@@ -706,7 +665,9 @@
                                             <div class="card-body">
                                                 <div class="media d-flex">
                                                     <div class="avatar me-5 flex-shrink-0">
-                                                        {{-- <img class="avatar-img group_image" src="assets/img/avatar-5.jpg" alt="William Wright"> --}}
+                                                        <img class="avatar-img group_image"
+                                                            src="{{ asset('/image/no_image.jpg') }}"
+                                                            alt="William Wright">
                                                     </div>
                                                     <div
                                                         class="media-body align-self-center me-6 group_card_media flex-grow-1">
@@ -731,7 +692,9 @@
                                             <div class="card-body">
                                                 <div class="media d-flex">
                                                     <div class="avatar me-5 flex-shrink-0">
-                                                        {{-- <img class="avatar-img group_image" src="assets/img/avatar-6.png" alt="William Greer"> --}}
+                                                        <img class="avatar-img group_image"
+                                                            src="{{ asset('/image/no_image.jpg') }}"
+                                                            alt="William Greer">
                                                     </div>
                                                     <div
                                                         class="media-body align-self-center me-6 group_card_media flex-grow-1">
@@ -759,7 +722,9 @@
                                             <div class="card-body">
                                                 <div class="media d-flex">
                                                     <div class="avatar me-5 flex-shrink-0">
-                                                        {{-- <img class="avatar-img group_image" src="assets/img/avatar-8.jpg" alt="Zane Mayes"> --}}
+                                                        <img class="avatar-img group_image"
+                                                            src="{{ asset('/image/no_image.jpg') }}"
+                                                            alt="Zane Mayes">
                                                     </div>
                                                     <div
                                                         class="media-body align-self-center me-6 group_card_media flex-grow-1">
@@ -795,215 +760,10 @@
                     </div>
                 </div>
             </div>
-            <!-- /New group modal -->
 
-            <!-- Profile Modal -->
-            <div class="modal fade" id="profile_modal">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">
-                                Profile
-                            </h5>
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <i class="fas fa-times close_icon"></i>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <!-- Card -->
-                            <div class="card mb-6 profile_Card">
-                                <div class="card-body">
-                                    <div class="text-center py-6">
-                                        <!-- Photo -->
-                                        <div class="avatar avatar-xl mb-3">
-                                            {{-- <img class="avatar-img rounded-circle mCS_img_loaded" src="assets/img/avatar-5.jpg" alt=""> --}}
-                                        </div>
-                                        <h5>John Janousek</h5>
-                                        <p class="text-muted m-0">Last seen: Today</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Card -->
-                            <!-- Card -->
-                            <form action="#" class="mt-3">
-                                <div class="form-group">
-                                    <label>Country</label>
-                                    <input class="form-control form-control-lg group_formcontrol"
-                                        name="new-chat-title" type="text" placeholder="Country Name">
-                                </div>
-                                <div class="form-group">
-                                    <label>Phone</label>
-                                    <input class="form-control form-control-lg group_formcontrol"
-                                        name="new-chat-title" type="text" placeholder="+39 02 87 21 43 19">
-                                </div>
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input class="form-control form-control-lg group_formcontrol"
-                                        name="new-chat-title" type="email" placeholder="johnjanousek@gmail.com">
-                                </div>
-                            </form>
-                            <!-- Card -->
-                            <div class="form-row profile_form mt-3 mb-1">
-                                <!-- Button -->
-                                <button type="button" class="btn newgroup_create mb-0" data-bs-dismiss="modal">
-                                    Update Profile
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Profile Modal -->
-
-            <!-- Settings Modal -->
-            <div class="modal fade" id="settings_modal">
-                <div class="modal-dialog modal-dialog-centered">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title">
-                                Settings
-                            </h5>
-                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                                <i class="fas fa-times close_icon"></i>
-                            </button>
-                        </div>
-                        <div class="modal-body">
-                            <div class="card-header position-relative account_details">
-                                <a href="#" class="text-reset d-block stretched-link collapsed">
-                                    <div class="row no-gutters align-items-center">
-                                        <!-- Title -->
-                                        <div class="col">
-                                            <h5>Account</h5>
-                                            <p class="m-0">Update your profile details.</p>
-                                        </div>
-                                        <!-- Icon -->
-                                        <div class="col-auto">
-                                            <i class="text-muted icon-md fas fa-user"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="card-header position-relative mt-3 security_details">
-                                <a href="#" class="text-reset d-block stretched-link collapsed">
-                                    <div class="row no-gutters align-items-center">
-                                        <!-- Title -->
-                                        <div class="col">
-                                            <h5>Security</h5>
-                                            <p class="m-0">Update your profile details.</p>
-                                        </div>
-                                        <!-- Icon -->
-                                        <div class="col-auto">
-                                            <i class="text-muted icon-md fas fa-crosshairs"></i>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="mt-3">
-                                <label for="profile-name">Name</label>
-                                <input class="form-control form-control-lg profile_input group_formcontrol"
-                                    name="profile-name" id="profile-name" type="text"
-                                    placeholder="Type your name">
-                            </div>
-                            <div class="mt-4">
-                                <label for="profile-name">Current Password</label>
-                                <input class="form-control form-control-lg group_formcontrol" name="profile-name"
-                                    id="profile-name_pswd" type="text" placeholder="Current Password">
-                            </div>
-                            <div class="mt-4">
-                                <label for="profile-name">New Password</label>
-                                <input class="form-control form-control-lg group_formcontrol" name="profile-name"
-                                    id="profile-name_new" type="text" placeholder="New Password">
-                            </div>
-                            <div class="mt-4">
-                                <label for="profile-name">Verify Password</label>
-                                <input class="form-control form-control-lg group_formcontrol" name="profile-name"
-                                    id="profile-name_prfname" type="text" placeholder="Verify Password">
-                            </div>
-                            <div class="mt-3 text-center">
-                                <button class="btn newgroup_create mb-0" type="submit" data-bs-dismiss="modal">Save
-                                    Settings</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- /Settings Modal -->
 
             <!-- Right sidebar -->
-            <div class="right-sidebar right_sidebar_profile" id="middle1">
-                <div class="right-sidebar-wrap active">
-                    <div class="contact-close_call me-4 mt-4 text-end">
-                        <a href="#" class="btn btn-outline-light close_profile close_profile4">
-                            <i class="fas fa-times close_icon"></i>
-                        </a>
-                    </div>
-                    <div class="sidebar-body">
-                        <div class="ps-4 pe-4 mt-0 right_sidebar_logo">
-                            <div class="text-center mb-3">
-                                <figure class="avatar avatar-xl mb-3">
-                                    {{-- <img src="assets/img/avatar-2.jpg" class="rounded-circle" alt="image"> --}}
-                                </figure>
-                                <h5 class="profile-name">Scott Albright</h5>
-                            </div>
-                            <div>
-
-                                <div class="accordion-col">
-                                    <div class="accordion-title">
-                                        <h6 class="primary-title">Media (31) <i
-                                                class="fas fa-chevron-right float-end"></i></h6>
-                                    </div>
-                                    <div class="accordion-content">
-                                        <div class="media-lists">
-                                            <div class="media-image">
-                                                {{-- <img src="assets/img/media1.jpg" alt=""> --}}
-                                            </div>
-                                            <div class="media-image">
-                                                {{-- <img src="assets/img/media2.jpg" alt=""> --}}
-                                            </div>
-                                            <div class="media-image">
-                                                {{-- <img src="assets/img/media3.jpg" alt=""> --}}
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-title">
-                                        <h6 class="primary-title">About and phone number <i
-                                                class="fas fa-chevron-right float-end"></i></h6>
-                                    </div>
-                                    <div class="accordion-content">
-                                        <p class="text-muted text-center mt-1">Help people to build websites and apps +
-                                            grow
-                                            awareness in social media 🔥</p>
-                                        <div class="mt-2 text-center">
-                                            <h6>Phone: <span class="text-muted ms-2">+(33 1) 45 55 01 10</span></h6>
-                                        </div>
-                                    </div>
-                                    <div class="accordion-title">
-                                        <h6 class="primary-title">Settings <i
-                                                class="fas fa-chevron-right float-end"></i></h6>
-                                    </div>
-                                    <div class="accordion-content">
-                                        <ul class="contact-action">
-                                            <li class="block-user mt-1">
-                                                <a href=""><i class="fas fa-ban me-2 text-muted"></i>Block</a>
-                                            </li>
-                                            <li class="report-contact">
-                                                <a href=""><i class="fas fa-thumbs-down me-2"></i> Report
-                                                    Contact</a>
-                                            </li>
-                                            <li class="delete-chat">
-                                                <a href=""><i class="fas fa-trash-alt me-2"></i> Delete
-                                                    Chat</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+           @include('admin.chat.right_chat_detail')
             <!-- Right sidebar -->
 
         </div>

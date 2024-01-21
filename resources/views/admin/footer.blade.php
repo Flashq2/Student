@@ -24,13 +24,12 @@
         cluster: "ap1",
         });
     var channel = pusher.subscribe("triger_message");
+    channel.bind("triger", (data) => {
+        console.log(data);
+    });
     var notyf = new Notyf({
         duration: 3000,
     });
-    channel.bind("triger", (data) => {
-    console.log(data);
-    });
-
     $(document).ready(function() {
         $('.global_laoder').hide();
 

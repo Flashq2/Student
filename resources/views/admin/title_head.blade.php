@@ -29,7 +29,6 @@
                     @include('admin.datetime')
                 </center>
             </div>
-
             <div class="global_laoder">
                 <span class="loader"></span>
               </div>
@@ -62,8 +61,7 @@
                                         <span class="badge badge-pill badge-primary" id="Auditing">Auditing &nbsp;<i class="fa-regular fa-note-sticky" style="color: aliceblue;"></i></span>
                                         <span class="badge badge-pill badge-info">Website &nbsp; <i class="fa-solid fa-pager" style="color: aliceblue;"></i></span>    
                                         <span class="badge badge-pill badge-danger" id="logout_controller">Logout &nbsp; <i class="fa-solid fa-arrow-right-from-bracket" style="color: aliceblue;" ></i></span>    
-                                         
-                                        </div>
+                                    </div>
                                 </div>
                             </div>
                            

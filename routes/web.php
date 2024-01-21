@@ -148,10 +148,11 @@ Route::group(['middleware' => 'admin'], function () {
 
     Route::group(['prefix' => 'chat'], function () {
         Route::resource('/', ChatController::class);
-        // Route::get('/getmodal', [ChatController::class, 'modal']);
- 
-        // Route::get('export', [SlideShowController::class, 'exportExcell'])->name('slide_show.export');
-
+        Route::get('/search_new',[ChatController::class,'DoSearchNewUser']);
+        Route::get('/createConnection',[ChatController::class,'createConnection']);
+        Route::get('/showMessage',[ChatController::class,'showMessage']);
+        Route::post('/sendMessage',[ChatController::class,'sendMessage']);
+        Route::get('/pusherConnection',[ChatController::class,'pusherConnection']);
     });
 
 
