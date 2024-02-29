@@ -152,7 +152,7 @@ class SystemController extends Controller
             if (!file_exists($save_to_path)) mkdir($save_to_path, 0777, true);
 
             $http = $request->getSchemeAndHttpHost();
-            $domain = \Config::get('app.domain_name');
+            // $domain = \Config::get('app.domain_name');
             $result = Excel::store(new UserExport($col_record,$request_table,$extract_query),"$file_path",'local');
             $url = "$http/app/$file_path";
             if(!$result)   return response()->json(['status' =>'warning','msg' => 'Something went wrong']);

@@ -144,7 +144,7 @@ class ItemControll extends Controller
             $fileTmpLoc = $_FILES["file"]["tmp_name"];
             $kaboom = explode(".", $fileName);
             $fileExt = end($kaboom);
-            $token = openssl_random_pseudo_bytes(20);
+            $token = openssl_random_pseudo_bytes(20); // Random ssl
             $token = bin2hex($token);
             $fname = $token . '.' . $fileExt;
             $moveResult = move_uploaded_file($fileTmpLoc, $upload_path . "/" . $fname);
@@ -158,8 +158,6 @@ class ItemControll extends Controller
                 return response()->json(['status' => 'success' , 'msg' => 'Your changes have been successfully saved!','path' => $file_path]);
              }
              return response()->json(['status' => 'warning' , 'msg' => 'Something went wrong !']);   
-
-             
         } catch (\Exception $ex) {
             DB::rollBack();
             $this->system->telegram($ex->getMessage(),$this->page,$ex->getLine());
@@ -173,14 +171,13 @@ class ItemControll extends Controller
             $record = ItemPicturesModal::where('id',$data['id'])->first();
             $http = $request->getSchemeAndHttpHost();
             $path_folder = str_replace($http,'',$record->picture_ori);
-            $sd = public_path($path_folder);
-            if (file_exists($sd)) {
-                unlink($sd);
+            $image_to_be_delete = public_path($path_folder);
+            if (file_exists($image_to_be_delete)) {
+                unlink($image_to_be_delete); // If success return true;
             }
             DB::commit();
             $record->delete();
             return response()->json(['status' => 'success' , 'msg' => 'File has been delete']);
-            
         }
         catch (\Exception $ex) {
             DB::rollBack();

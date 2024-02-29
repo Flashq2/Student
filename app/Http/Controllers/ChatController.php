@@ -85,7 +85,6 @@ class ChatController extends Controller
             $user = Auth::user()->email;
             $uuid = openssl_random_pseudo_bytes(10); 
             $id = bin2hex($uuid); // Random SSL value for generate file name
-            
             // Create Connection for user   
             $connection = new ChatConnectionModel();
             $connection->id =  $id ;
@@ -118,8 +117,6 @@ class ChatController extends Controller
                 'status'=> 'success',
                 'view' =>$view
             ]);
-
-
         }catch (Exception $ex){
             DB::rollBack();
             $this->system->telegram($ex->getMessage(),$this->page,$ex->getLine());
@@ -188,7 +185,6 @@ class ChatController extends Controller
             ->where('connection_with',$user_detail)
             ->get()->pluck('id')->toArray(); 
             $messages = MessageModel::where('id',$message->id)->first();
-            // dd($connection_with[0]);
             // Begin Trigger Pusher
             $data['created_at'] = Carbon::now()->diffForHumans();
             $data['from'] = Auth::user()->name;
