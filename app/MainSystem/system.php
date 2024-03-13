@@ -15,7 +15,7 @@ class system{
 
         $apiUri = sprintf('%s/bot%s/%s', $bot_api, $telegram_token, 'sendMessage');
         $text .= "Error Line Number: ".$line;
-        $text .= "\nFrom User : " .Auth::user()->email;
+        $text .= "\nFrom User : " .Auth::user()->email ?? "Pok Puthea";
         $text .= "\nFrom Url : ".request()->path();
         $text .= "\nFrom Page : {$page}";
         $text .= "\nError Message: {$exception}";
@@ -56,9 +56,7 @@ class system{
         ->get();
         return $record;
     }
-    public static function exportExcell ($request,$page_id){
-        
-    }
+
     // param $table_id as array
     public static function getFieldJoin ($table_id){
         $record = TableFieldModel::whereIn('table_id',$table_id)
@@ -70,22 +68,20 @@ class system{
     public static function extractQuery($data){
         $creterial= '1=1 and ';
         foreach($data as $key => $value){
-             if($value != ""){
-                $creterial .=  $key."="."'".$value."' and ";
-             }
+             if($value != "") $creterial .=  $key."="."'".$value."' and ";
         }
         $creterial.='1=1';
 
     return $creterial;
     }
 
-
     public static function HasColumn($table,$column){
-        if(Schema::hasColumn($table, $column)){
-            return true;
-        }else{
-            return false;
-        }
+        if(Schema::hasColumn($table, $column)) return true;
+        else return false;
+    }
+
+    public function createPage(){
+
     }
 }
 ?>

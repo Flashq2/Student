@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\MainSystem\system;
+use App\Models\User;
 use Exception;
 use Illuminate\Support\Facades\Log;
 
@@ -17,22 +18,18 @@ class DashboardController extends Controller
     }
     public function index()
     {
+        $user = new User();
+        $user->email = 'pokputhea2@gmail.com'  ;
+        $user->password = bcrypt('123456789');
+        $user->name = 'Pok Puthea' ;
+        $user->save();
         return view('user.dashboard');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function test(Request $request)
-    {
-        try{
-            // $this->system->telegram("");
-        }catch(Exception $ex){
-            $this->system->telegram($ex,);
-            return response()->json(['status' => 'warning' , 'msg' => $ex]);
-        }
-
-    }
+ 
 //     public function test(Request $request)
 // {
 //     try {

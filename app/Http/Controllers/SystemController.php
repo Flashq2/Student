@@ -107,15 +107,14 @@ class SystemController extends Controller
                         $link_record = url('/item/item_card');
                         break;
                 case 'menu_group':
-                            $record = MenuGroupModel::whereRaw($extract_query)->paginate(15);
-                            break;
+                    $record = MenuGroupModel::whereRaw($extract_query)->paginate(15);
+                    break;
                 case 'warehouses':
-                                $record = WarehouseModel::whereRaw($extract_query)->paginate(15);
-                                break;
+                    $record = WarehouseModel::whereRaw($extract_query)->paginate(15);
+                    break;
                 case 'slide_show':
-                                    $record = SlideShowModel::whereRaw($extract_query)->paginate(15);
-                                    break;
-                
+                    $record = SlideShowModel::whereRaw($extract_query)->paginate(15);
+                    break;
                 default:
                     
                     break; 

@@ -59,7 +59,7 @@
       <div class="w-px-400 mx-auto">
         <!-- /Logo -->
         {{-- <h4 class="mb-2">Hello ! Again.</h4> --}}
-        <img src="https://www.setecu.com/images/sampledata/icetheme/logo.png" class="img-fluid" alt="Login image" width="700" data-app-dark-img="illustrations/boy-with-rocket-dark.png" data-app-light-img="illustrations/boy-with-rocket-light.png">
+        {{-- <img src="https://www.setecu.com/images/sampledata/icetheme/logo.png" class="img-fluid" alt="Login image" width="700" data-app-dark-img="illustrations/boy-with-rocket-dark.png" data-app-light-img="illustrations/boy-with-rocket-light.png"> --}}
 <br><br>
         {{-- <p class="mb-4">Please sign-in to your account and start the adventure</p> --}}
         <br>

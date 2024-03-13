@@ -16,11 +16,11 @@ class ComputerShopMiddleWare
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(!Auth::check()){
-            return redirect('/login');
+        if(Auth::check()){
+            return $next($request); 
         }
         else{
-            return $next($request);
+            return redirect('/login');
         }
         
     }
