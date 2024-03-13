@@ -12,54 +12,20 @@ class PageModelController extends Controller
      */
     public function index()
     {
-        //
+        
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     */
-    public function show(PageModel $pageModel)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(PageModel $pageModel)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, PageModel $pageModel)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(PageModel $pageModel)
-    {
-        //
+    public function getDerectory($path){
+        $subDir = [];
+        $directories = array_filter(glob($path), 'is_dir');
+        foreach ($directories as $directory) {
+            array_push($subDir,$directory);
+            if($this->getSubDirectories($directory.'/*')) {
+                array_push($subDir, $this->getSubDirectories($directory.'/*'));
+            }
+        }
+        
+        $finalArrays = array_flatten($path);
+        return $finalArrays;
     }
 }
